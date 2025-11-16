@@ -22,6 +22,9 @@
     />
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Favicon for browser tab -->
+    <!-- Updated to use the transparent LIQUIDog logo as the favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32" />
   </head>
   <body>
     <!-- Navigation -->
@@ -31,6 +34,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#contract">Contract</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#community">Community</a></li>
@@ -119,6 +123,17 @@
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- Contract Section -->
+    <section id="contract" class="contract section">
+      <h2>Token Contract</h2>
+      <p>Here is the contract address for LQDog on the Base network. Click the copy button to copy the address to your clipboard.</p>
+      <div class="contract-wrapper">
+        <code id="contractAddress">0x0123456789abcdef0123456789abcdef01234567</code>
+        <button id="copyContractBtn" class="copy-btn" aria-label="Copy contract address">Copy</button>
+      </div>
+      <span id="copyMessage" class="copy-message" hidden>Copied!</span>
     </section>
 
     <!-- Roadmap Section -->

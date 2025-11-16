@@ -71,4 +71,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial render
   renderGallery();
+
+  // Copy contract address functionality
+  const copyBtn = document.getElementById('copyContractBtn');
+  const contractAddrEl = document.getElementById('contractAddress');
+  const copyMsg = document.getElementById('copyMessage');
+  if (copyBtn && contractAddrEl) {
+    copyBtn.addEventListener('click', () => {
+      const address = contractAddrEl.textContent.trim();
+      if (navigator.clipboard && address) {
+        navigator.clipboard
+          .writeText(address)
+          .then(() => {
+            if (copyMsg) {
+              copyMsg.hidden = false;
+              setTimeout(() => {
+                copyMsg.hidden = true;
+              }, 2000);
+            }
+          })
+          .catch((err) => {
+            console.error('Failed to copy contract address:', err);
+          });
+      }
+    });
+  }
 });
