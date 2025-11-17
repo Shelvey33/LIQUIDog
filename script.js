@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'assets/gallery/72.jpg',
     'assets/gallery/79.jpg',
     'assets/gallery/87.jpg',
+    'assets/gallery/dc9bedce-bb3a-4cfa-83ce-065debce6ab1.png',
     // Add additional image file paths here. The script will
     // automatically paginate based on the number of images.
   ];
