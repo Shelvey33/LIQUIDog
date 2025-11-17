@@ -610,6 +610,7 @@ body {
   .buy-steps {
     grid-template-columns: 1fr;
   }
+}
 
 /* --- Dexscreener chart buttons (hero + how-to-buy), all states --- */
 a.chart-btn,
