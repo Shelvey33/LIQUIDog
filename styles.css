@@ -537,6 +537,7 @@ body {
   background: #093963;
   color: #e6f2ff;
 }
+
 .how-to-buy h2 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
@@ -544,38 +545,43 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* 4 steps in columns, responsive down to mobile */
 .buy-steps {
-  /* Stack steps vertically on smaller screens for better readability */
-  display: flex;
-  flex-direction: row;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .buy-steps .step {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  backdrop-filter: none;
-  box-shadow: none;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
 }
+
 .buy-steps .step h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
   color: #ffffff;
   background: linear-gradient(90deg, #6ddfff, #22a6f9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .buy-steps .step p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #cde3f5;
-  margin-bottom: 0.6rem;
 }
+
+/* Buttons stay centered under the grid */
 .buy-actions {
   display: flex;
   justify-content: center;
@@ -583,6 +589,19 @@ body {
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
+
+/* Optional: stack steps on mobile */
+@media (max-width: 900px) {
+  .buy-steps {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .buy-steps {
+    grid-template-columns: 1fr;
+  }
+
 
 /* Dexscreener button styling */
 .dexscreener-link {
