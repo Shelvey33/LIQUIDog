@@ -149,8 +149,9 @@ body {
 }
 
 /* Tokenomics section */
+/* Tokenomics section – slightly lighter blue so it doesn't match the Contract section */
 .tokenomics {
-  background: #084072;
+  background: #084a78;
   color: #eaf6ff;
 }
 
@@ -316,6 +317,59 @@ body {
   padding-bottom: 6rem;
 }
 
+/* How-to-buy section */
+.how-to-buy {
+  background: #093963;
+  color: #eaf6ff;
+}
+
+.how-to-buy h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #6ddfff, #22a6f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buy-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.buy-steps .step {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.buy-steps .step h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #6ddfff, #22a6f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buy-steps .step p {
+  font-size: 0.95rem;
+  color: #cde3f5;
+}
+
+.buy-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
 .community h2 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
@@ -382,8 +436,9 @@ body {
 /* Contract section – use a slightly different shade of blue to differentiate
  * from the tokenomics and community sections. This keeps the palette
  * consistent while giving the contract section its own identity. */
+/* Contract section – give it a darker blue tone distinct from Tokenomics */
 .contract {
-  background: #052d56;
+  background: #022c55;
   color: #eaf6ff;
   padding: 4rem 2rem;
   text-align: center;
@@ -441,11 +496,13 @@ body {
 
 /* Copy message is hidden by default; display will be toggled via script */
 .copy-message {
+  /* Hide by default; JS toggles display */
   display: none;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   font-size: 0.9rem;
   color: #6ddfff;
   font-weight: 500;
+  text-align: center;
 }
 
 /* Dexscreener button styling */
@@ -462,6 +519,27 @@ body {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
+.chart-btn {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.9rem 2.2rem;
+  background: #34c759;
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.chart-btn i {
+  margin-right: 0.4rem;
+}
+
+.chart-btn:hover {
+  background: #2fa94f;
+  transform: translateY(-2px);
+}
 .dexscreener-link:hover {
   background: #1a86d5;
   transform: translateY(-1px);

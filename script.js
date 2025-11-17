@@ -15,24 +15,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prevPage');
   const nextBtn = document.getElementById('nextPage');
 
-  // Source images to cycle through. Replace or extend this array with your
-  // own file names located in the assets folder. For now we reuse the
-  // same four images as placeholders.
+  // Source images for the gallery. Place your own images in assets/gallery
+  // and list them here. The gallery will automatically paginate based on
+  // the number of images provided.
   const imageSources = [
+    'assets/gallery/10.jpg',
+    'assets/gallery/16.jpg',
+    'assets/gallery/30.jpg',
+    'assets/gallery/32.jpg',
+    'assets/gallery/58.jpg',
+    'assets/gallery/72.jpg',
+    'assets/gallery/79.jpg',
+    'assets/gallery/87.jpg',
+    'assets/gallery/102.jpg',
+    'assets/gallery/5.jpeg',
+    'assets/gallery/153.jpg',
+    'assets/gallery/2.jpg',
+    'assets/gallery/20.png',
     'assets/token1.png',
     'assets/token2.png',
-    'assets/token3.png',
-    'assets/hero.jpg',
+    'assets/token3.png'
   ];
 
-  // Build a larger array of images by repeating the placeholders.
-  const galleryImages = [];
-  const totalImages = 81; // 9 pages × 9 images
-  for (let i = 0; i < totalImages; i++) {
-    const src = imageSources[i % imageSources.length];
-    galleryImages.push(src);
-  }
-
+  // Build the gallery from the provided sources. Unlike before, we don't
+  // repeat images; we display each image once and calculate pages based
+  // on the total number of images.
+  const galleryImages = imageSources.slice();
   const imagesPerPage = 9;
   const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
   let currentPage = 1;
