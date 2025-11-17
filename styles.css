@@ -149,9 +149,14 @@ body {
 }
 
 /* Tokenomics section */
-/* Tokenomics section – slightly lighter blue so it doesn't match the Contract section */
+/*
+ * Tokenomics section uses a lighter shade of blue than the contract
+ * section to provide clear visual separation. Previously both shared
+ * similar colours which made them blend together. Adjust the
+ * background to a slightly lighter tone while keeping text readable.
+ */
 .tokenomics {
-  background: #084a78;
+  background: #083f73;
   color: #eaf6ff;
 }
 
@@ -272,12 +277,18 @@ body {
   margin-top: 2rem;
 }
 
+/* Ensure gallery thumbnails maintain a square aspect ratio.  Using
+   aspect-ratio: 1 enforces equal width and height.  We use
+   object-fit: contain so the entire image is visible without
+   cropping; any extra space will simply show the section’s background
+   colour. */
 .gallery-container img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: #051622;
 }
 
 .gallery-controls {
@@ -315,59 +326,6 @@ body {
   background: #084072;
   color: #eaf6ff;
   padding-bottom: 6rem;
-}
-
-/* How-to-buy section */
-.how-to-buy {
-  background: #093963;
-  color: #eaf6ff;
-}
-
-.how-to-buy h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(90deg, #6ddfff, #22a6f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.buy-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.buy-steps .step {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  text-align: left;
-}
-
-.buy-steps .step h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
-  color: #ffffff;
-  background: linear-gradient(90deg, #6ddfff, #22a6f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.buy-steps .step p {
-  font-size: 0.95rem;
-  color: #cde3f5;
-}
-
-.buy-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
 }
 
 .community h2 {
@@ -433,12 +391,12 @@ body {
 }
 
 /* Contract section */
-/* Contract section – use a slightly different shade of blue to differentiate
- * from the tokenomics and community sections. This keeps the palette
- * consistent while giving the contract section its own identity. */
-/* Contract section – give it a darker blue tone distinct from Tokenomics */
 .contract {
-  background: #022c55;
+  /* Give the contract section its own distinct color while keeping within
+     the LIQUIDog blue palette. The previous color matched the
+     tokenomics section, so we choose a deeper, richer shade of blue for
+     contrast. */
+  background: #0a376b;
   color: #eaf6ff;
   padding: 4rem 2rem;
   text-align: center;
@@ -494,53 +452,81 @@ body {
   transform: translateY(-1px);
 }
 
-/* Copy message is hidden by default; display will be toggled via script */
 .copy-message {
-  /* Hide by default; JS toggles display */
+  /* Hide copy messages by default. The hidden attribute is toggled
+     via JavaScript so this message only appears briefly when the
+     contract address is copied. */
   display: none;
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   font-size: 0.9rem;
   color: #6ddfff;
   font-weight: 500;
-  text-align: center;
 }
 
-/* Dexscreener button styling */
-.dexscreener-link {
-  display: inline-block;
+/* Modal styles for full image preview */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal[hidden] {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.close-btn {
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+  background: #22a6f9;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+.close-btn:hover {
+  background: #1a86d5;
+}
+.download-link {
   margin-top: 1rem;
   padding: 0.6rem 1.4rem;
   background: #22a6f9;
   color: #ffffff;
   border-radius: 8px;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
   box-shadow: 0 4px 12px rgba(34, 166, 249, 0.4);
   transition: background 0.3s ease, transform 0.2s ease;
 }
-
-.chart-btn {
-  display: inline-block;
-  margin-left: 1rem;
-  padding: 0.9rem 2.2rem;
-  background: #34c759;
-  color: #ffffff;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.chart-btn i {
-  margin-right: 0.4rem;
-}
-
-.chart-btn:hover {
-  background: #2fa94f;
-  transform: translateY(-2px);
-}
-.dexscreener-link:hover {
+.download-link:hover {
   background: #1a86d5;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }

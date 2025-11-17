@@ -52,10 +52,8 @@
           LIQUIDog (LQDog) is the most liquid canine on the Base network. Are
           you liquid?
         </p>
-        <a href="#how-to-buy" class="btn">Buy&nbsp;$LQDog</a>
-        <!-- Chart button linking to Dexscreener with icon -->
-        <a href="https://dexscreener.com/base/0x7570daf3f560acbf44ae4938ef34f4495404b2d2" class="chart-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chart-line"></i>Chart</a>
-    </div>
+        <a href="#tokenomics" class="btn">Buy&nbsp;$LQDog</a>
+      </div>
       <div class="hero-image">
         <!-- Replace this image with your preferred hero artwork -->
         <img src="assets/hero.jpg" alt="LIQUIDog hero artwork" />
@@ -89,8 +87,7 @@
         <code id="contractAddress">0x7570daf3f560acbf44ae4938ef34f4495404b2d2</code>
         <button id="copyContractBtn" class="copy-btn" aria-label="Copy contract address">Copy</button>
       </div>
-      <!-- Message shown after copying the contract address; hidden by default -->
-      <span id="copyMessage" class="copy-message">Copied!</span>
+      <span id="copyMessage" class="copy-message" hidden>Copied!</span>
     </section>
 
         <!-- Tokenomics Section -->
@@ -182,33 +179,6 @@
       </div>
     </section>
 
-    <!-- How to Buy Section -->
-    <section id="how-to-buy" class="how-to-buy section">
-      <h2>How to Buy&nbsp;$LQDog</h2>
-      <div class="buy-steps">
-        <div class="step">
-          <h3>1. Get a Wallet</h3>
-          <p>Install a Web3 wallet like MetaMask, Coinbase Wallet or Trust Wallet to hold your tokens.</p>
-        </div>
-        <div class="step">
-          <h3>2. Add Base</h3>
-          <p>Add the Base network to your wallet using the official network RPC details or by connecting via <a href="https://bridge.base.org/" target="_blank" rel="noopener noreferrer">Base Bridge</a>.</p>
-        </div>
-        <div class="step">
-          <h3>3. Fund Your Wallet</h3>
-          <p>Deposit ETH to your Base wallet from your Central Exchange or bridge from another network.</p>
-        </div>
-        <div class="step">
-          <h3>4. Swap for LQDog</h3>
-          <p>Visit your favourite DEX (ours is MATCHA linked below) and swap ETH for $LQDog using our contract address.</p>
-        </div>
-      </div>
-      <div class="buy-actions">
-        <a href="https://matcha.xyz/tokens/base/0x7570daf3f560acbf44ae4938ef34f4495404b2d2?sellChain=8453&sellAddress=0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" class="btn">Buy&nbsp;$LQDog</a>
-        <a href="https://dexscreener.com/base/0x7570daf3f560acbf44ae4938ef34f4495404b2d2" class="chart-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chart-line"></i>Chart</a>
-      </div>
-    </section>
-
     <!-- Gallery Section -->
     <section id="gallery" class="gallery section">
       <h2>Gallery</h2>
@@ -218,6 +188,15 @@
         <button id="prevPage" class="gallery-btn" aria-label="Previous page">&laquo; Prev</button>
         <span id="pageIndicator">Page&nbsp;1&nbsp;of&nbsp;9</span>
         <button id="nextPage" class="gallery-btn" aria-label="Next page">Next&nbsp;&raquo;</button>
+      </div>
+
+      <!-- Modal for viewing full images -->
+      <div id="imageModal" class="modal" hidden>
+        <div class="modal-content">
+          <button id="closeModal" class="close-btn" aria-label="Close modal">&times;</button>
+          <img id="modalImg" src="" alt="Full size gallery image" />
+          <a id="downloadLink" class="download-link" download target="_blank" rel="noopener">Download</a>
+        </div>
       </div>
     </section>
 
