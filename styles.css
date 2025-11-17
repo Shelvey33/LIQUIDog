@@ -611,8 +611,13 @@ body {
     grid-template-columns: 1fr;
   }
 
-/* --- Dexscreener chart buttons (hero + how-to-buy) --- */
-a.chart-btn {
+/* --- Dexscreener chart buttons (hero + how-to-buy), all states --- */
+a.chart-btn,
+a.chart-btn:link,
+a.chart-btn:visited,
+a.chart-btn:hover,
+a.chart-btn:active,
+a.chart-btn:focus {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -624,21 +629,22 @@ a.chart-btn {
   color: #ffffff !important;
 
   border-radius: 50px !important;
+  border: none !important;
   text-decoration: none !important;
   font-weight: 600;
   font-size: 0.95rem;
 
   box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
-  transition: background 0.3s ease, transform 0.2s ease;
   white-space: nowrap; /* keeps icon + text on one line */
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 a.chart-btn i {
   margin-right: 0.4rem;
 }
 
-a.chart-btn:hover {
+a.chart-btn:hover,
+a.chart-btn:active {
   background: #2fa94f !important;
   transform: translateY(-2px);
 }
-/* End of styles.css */
