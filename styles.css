@@ -547,7 +547,7 @@ body {
 .buy-steps {
   /* Stack steps vertically on smaller screens for better readability */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.2rem;
   margin-top: 1.5rem;
   max-width: 800px;
