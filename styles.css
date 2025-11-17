@@ -379,8 +379,11 @@ body {
 }
 
 /* Contract section */
+/* Contract section – use a slightly different shade of blue to differentiate
+ * from the tokenomics and community sections. This keeps the palette
+ * consistent while giving the contract section its own identity. */
 .contract {
-  background: #084072;
+  background: #052d56;
   color: #eaf6ff;
   padding: 4rem 2rem;
   text-align: center;
@@ -436,10 +439,30 @@ body {
   transform: translateY(-1px);
 }
 
+/* Copy message is hidden by default; display will be toggled via script */
 .copy-message {
-  display: block;
+  display: none;
   margin-top: 0.8rem;
   font-size: 0.9rem;
   color: #6ddfff;
   font-weight: 500;
+}
+
+/* Dexscreener button styling */
+.dexscreener-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #22a6f9;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(34, 166, 249, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dexscreener-link:hover {
+  background: #1a86d5;
+  transform: translateY(-1px);
 }

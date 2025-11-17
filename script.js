@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyBtn = document.getElementById('copyContractBtn');
   const contractAddrEl = document.getElementById('contractAddress');
   const copyMsg = document.getElementById('copyMessage');
+  // Ensure the message is hidden on page load
+  if (copyMsg) {
+    copyMsg.style.display = 'none';
+  }
   if (copyBtn && contractAddrEl) {
     copyBtn.addEventListener('click', () => {
       const address = contractAddrEl.textContent.trim();
@@ -84,9 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
           .writeText(address)
           .then(() => {
             if (copyMsg) {
-              copyMsg.hidden = false;
+              // Show the message briefly
+              copyMsg.style.display = 'inline';
               setTimeout(() => {
-                copyMsg.hidden = true;
+                copyMsg.style.display = 'none';
               }, 2000);
             }
           })
