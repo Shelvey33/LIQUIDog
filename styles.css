@@ -618,7 +618,7 @@ body {
   justify-content: center;
   padding: 0.9rem 2.2rem;
   background: #34c759;
-  color: #ffffff !important;      /* override global link colour */
+  color: #ffffff;      /* override global link colour */
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
