@@ -66,20 +66,28 @@ body {
   }
 
   .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
+    gap: 0.35rem;             /* small gap between rows */
   }
 
-  .logo {
-    font-size: 1.4rem;
+  .logo {  
+    text-align: center;
+    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
     margin-bottom: 0.1rem;
   }
 
   .nav-links {
-    justify-content: flex-start;
+    display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
+    padding: 0;          /* remove any big left/right padding on links */
+    flex-basis: 100%;         /* links go on the second row */
+    justify-content: center;            /* spacing between Home / About / etc */
+    font-size: 0.95rem;       /* a touch smaller for mobile */
   }
 
   /* Brighten headings for mobile contrast */
@@ -97,20 +105,28 @@ body {
   }
 
   .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
+    gap: 0.35rem;             /* small gap between rows */
   }
 
-  .logo {
-    font-size: 1.4rem;
+  .logo {  
+    text-align: center;
+    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
     margin-bottom: 0.1rem;
   }
 
   .nav-links {
-    justify-content: flex-start;
+    display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
+    padding: 0;          /* remove any big left/right padding on links */
+    flex-basis: 100%;         /* links go on the second row */
+    justify-content: center;            /* spacing between Home / About / etc */
+    font-size: 0.95rem;       /* a touch smaller for mobile */
   }
 
   /* Brighten headings for mobile contrast */
@@ -122,6 +138,7 @@ body {
     -webkit-text-fill-color: transparent;
   }
 }
+
 
 /* Hero section */
 .hero {
