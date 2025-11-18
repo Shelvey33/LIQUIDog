@@ -186,16 +186,13 @@ body {
   color: #cde3f5;
 }
 
-/* Tokenomics section */
-/*
- * Tokenomics section uses a lighter shade of blue than the contract
- * section to provide clear visual separation. Previously both shared
- * similar colours which made them blend together. Adjust the
- * background to a slightly lighter tone while keeping text readable.
- */
-/* Restore tokenomics section colour to the original palette */
+/* ===========================
+   TOKENOMICS SECTION
+   =========================== */
+
+/* Base desktop/tablet styles */
 .tokenomics {
-  background: #084072;
+  background: #084072;          /* lighter than contract section */
   color: #eaf6ff;
 }
 
@@ -207,6 +204,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Cards container */
 .tokenomics .token-info {
   display: flex;
   flex-wrap: wrap;
@@ -215,6 +213,7 @@ body {
   margin-top: 2rem;
 }
 
+/* Individual cards */
 .tokenomics .card {
   width: 280px;
   background: rgba(255, 255, 255, 0.08);
@@ -236,6 +235,40 @@ body {
 .tokenomics .card p {
   font-size: 0.95rem;
   color: #d4e9ff;
+}
+
+/* ========= Responsive tweaks ========= */
+
+/* Medium screens (tablets / landscape phones):
+   allow cards to be a bit wider so they don’t look squashed */
+@media (max-width: 900px) {
+  .tokenomics .token-info {
+    gap: 1.5rem;
+  }
+
+  .tokenomics .card {
+    width: 225px;
+  }
+}
+
+/* Small screens (phones, portrait & landscape):
+   stack nicely, keep everything centered and readable */
+@media (max-width: 600px) {
+  .tokenomics .token-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tokenomics .card {
+    width: 100%;
+    max-width: 30 0px;             /* prevents cards from being crazy wide */
+    padding: 1.6rem;
+  }
+
+  .tokenomics h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
 }
 
 /* Roadmap section */
