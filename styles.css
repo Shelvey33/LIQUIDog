@@ -533,12 +533,10 @@ body {
   padding: 0.8rem 1.2rem;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: fit-content;
-  max-width: 100%;       /* still prevents overflow on smaller screens */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;             /* address + button can wrap instead of overflowing */
+  width: fit-content;     /* shrink to fit content */
 }
 
 .contract-wrapper code {
@@ -546,10 +544,10 @@ body {
   color: #ffffff;
   font-size: 0.95rem;
   user-select: all;
-  word-break: break-all;       /* long contract can wrap */
+  word-break: break-all;
   overflow-wrap: anywhere;
-  flex: 0 1 auto;            /* take remaining space but allow shrink */
-  white-space: nowrap;
+  flex: 0 1 auto;              /* don't force full-width stretching */
+  white-space: nowrap;         /* keep it on one line on desktop */
 }
 
 .copy-btn {
@@ -821,26 +819,16 @@ a.chart-btn:active {
   }
 
   .contract-wrapper code {
+    flex: 0 0 auto;
     text-align: center;
+    margin-bottom: 0.5rem;
+    white-space: normal;   /* override desktop nowrap so it wraps on mobile */
   }
 
   .hero-actions {
     justify-content: center;
   }
 
-  .contract-wrapper code {
-    /*
-     * When the contract address and copy button stack vertically,
-     * prevent the address block from growing to fill the available
-     * height (which caused an overly tall box). Setting flex to
-     * 0 0 auto keeps the height equal to its contents. We also
-     * center the text to maintain balance and add a small margin
-     * underneath for breathing room before the button.
-     */
-    flex: 0 0 auto;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
 
   .copy-btn {
     align-self: center;
@@ -882,5 +870,6 @@ a.chart-btn:active {
     flex: 0 0 auto;
     text-align: center;
     margin-bottom: 0.5rem;
+    white-space: normal;   /* override desktop nowrap so it wraps on mobile */
   }
 }
