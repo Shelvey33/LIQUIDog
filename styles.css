@@ -1,13 +1,15 @@
 /*
  * LIQUIDog Website Stylesheet
- *
- * This stylesheet defines the look and feel of the LIQUIDog landing page.
- * The design is inspired by the fun, upbeat aesthetic of successful meme
- * coins, using a vibrant blue palette and soft glassmorphism effects. It
- * aims to keep the layout simple, readable and responsive across devices.
+ * ---------------------------
+ * - Fun, vibrant meme-coin landing page
+ * - Strong focus on readability and responsiveness
+ * - Glassmorphism cards, bold hero, simple sections
  */
 
-/* Global reset */
+/* =========================================================
+   1. Global reset & base typography
+   ========================================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,13 +23,17 @@ body {
   line-height: 1.5;
 }
 
+/* Prevent tiny horizontal scroll on mobile */
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Navigation bar */
+/* =========================================================
+   2. Navigation bar
+   ========================================================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -67,12 +73,12 @@ body {
 
 /* Mobile navbar layout */
 @media (max-width: 900px) {
-   .navbar {
-    flex-direction: column;    /* stack logo + links */
+  .navbar {
+    flex-direction: column;        /* stack logo + links */
     align-items: center;
     justify-content: center;
-    padding: 0.9rem 1.25rem;   /* match hero/section padding */
-    gap: 0.6rem;               /* clean spacing between logo and links */
+    padding: 0.9rem 1.25rem;
+    gap: 0.6rem;
     text-align: center;
   }
 
@@ -92,11 +98,11 @@ body {
 
 @media (max-width: 640px) {
   .navbar {
-    flex-direction: column;    /* stack logo + links */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1.25rem;   /* again, match hero/section padding */
-    gap: 0.6rem;               /* clean spacing between logo and links */
+    padding: 0.8rem 1.25rem;
+    gap: 0.6rem;
     text-align: center;
   }
 
@@ -115,14 +121,17 @@ body {
   }
 }
 
-/* Hero section */
+/* =========================================================
+   3. Hero section
+   ========================================================= */
+
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 6rem; /* space for navbar */
+  padding-top: 6rem; /* space for navbar on desktop */
   overflow: hidden;
 }
 
@@ -131,7 +140,7 @@ body {
   padding: 2rem;
 }
 
-/* NEW: hero actions in a flex row so the two buttons stay on one line */
+/* Hero button row */
 .hero-actions {
   display: flex;
   align-items: center;
@@ -140,7 +149,7 @@ body {
   flex-wrap: nowrap;
 }
 
-/* Remove extra margins on hero buttons – spacing is handled by gap */
+/* Remove extra margins on hero buttons – spacing handled by flex gap */
 .hero-actions .btn,
 .hero-actions .chart-btn {
   margin: 0;
@@ -162,6 +171,23 @@ body {
   color: #d8eaff;
 }
 
+.hero-image {
+  max-width: 500px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   4. Buttons / CTAs
+   ========================================================= */
+
 .btn {
   display: inline-block;
   padding: 0.9rem 2.2rem;
@@ -176,7 +202,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Don’t use the generic button margins when in flex button groups */
+/* Don’t use generic button margins inside flex groups */
 .hero-actions .btn,
 .buy-actions .btn {
   margin: 0;
@@ -187,26 +213,60 @@ body {
   transform: translateY(-2px);
 }
 
-.hero-image {
-  max-width: 500px;
-  padding: 2rem;
-  text-align: center;
+/* --- Dexscreener chart buttons (hero + how-to-buy) --- */
+
+a.chart-btn,
+a.chart-btn:link,
+a.chart-btn:visited,
+a.chart-btn:hover,
+a.chart-btn:active,
+a.chart-btn:focus {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.2rem !important;
+  margin-left: 1rem;
+  background: #34c759 !important;
+  color: #ffffff !important;
+  border-radius: 50px !important;
+  border: none !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+/* No extra left margin in grouped button layouts */
+.hero-actions .chart-btn,
+.buy-actions .chart-btn {
+  margin-left: 0 !important;
 }
 
-/* Section base styling */
+a.chart-btn i {
+  margin-right: 0.4rem;
+}
+
+a.chart-btn:hover,
+a.chart-btn:active {
+  background: #2fa94f !important;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   5. Generic sections
+   ========================================================= */
+
 .section {
   padding: 4rem 2rem;
   text-align: center;
 }
 
-/* About section */
+/* =========================================================
+   6. About section
+   ========================================================= */
+
 .about {
   background: #093963;
   color: #e6f2ff;
@@ -227,9 +287,9 @@ body {
   color: #cde3f5;
 }
 
-/* ===========================
-   TOKENOMICS SECTION
-   =========================== */
+/* =========================================================
+   7. Tokenomics section
+   ========================================================= */
 
 .tokenomics {
   background: #084072;
@@ -277,7 +337,7 @@ body {
   color: #d4e9ff;
 }
 
-/* Medium screens */
+/* Tokenomics – medium and down */
 @media (max-width: 900px) {
   .tokenomics .token-info {
     flex-direction: column;
@@ -296,26 +356,10 @@ body {
   }
 }
 
-/* Small screens */
-@media (max-width: 600px) {
-  .tokenomics .token-info {
-    flex-direction: column;
-    align-items: center;
-  }
+/* =========================================================
+   8. Roadmap section
+   ========================================================= */
 
-  .tokenomics .card {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .tokenomics h2 {
-    text-align: center;
-    font-size: 2rem;
-  }
-}
-
-/* Roadmap section */
 .roadmap {
   background: #093963;
   color: #e6f2ff;
@@ -364,7 +408,10 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Gallery section */
+/* =========================================================
+   9. Gallery section
+   ========================================================= */
+
 .gallery {
   background: #093963;
   color: #e6f2ff;
@@ -432,7 +479,10 @@ body {
   color: #6ddfff;
 }
 
-/* Community section */
+/* =========================================================
+   10. Community section
+   ========================================================= */
+
 .community {
   background: #084072;
   color: #eaf6ff;
@@ -470,7 +520,10 @@ body {
   color: #6ddfff;
 }
 
-/* Footer */
+/* =========================================================
+   11. Footer
+   ========================================================= */
+
 .footer {
   background: #051622;
   padding: 1rem 2rem;
@@ -479,33 +532,10 @@ body {
   color: #7aa5c7;
 }
 
-/* Responsive adjustments (older block – left mostly as-is) */
-@media (max-width: 768px) {
-  .navbar .nav-links {
-    gap: 1rem;
-  }
+/* =========================================================
+   12. Contract section
+   ========================================================= */
 
-  .hero {
-    flex-direction: column-reverse;
-    padding-top: 6rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero-image {
-    max-width: 100%;
-  }
-
-  .tokenomics .token-info {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
-/* Contract section */
 .contract {
   background: #053b6a;
   color: #eaf6ff;
@@ -528,7 +558,7 @@ body {
   color: #cde3f5;
 }
 
-/* IMPORTANT: prevent contract box from being wider than the screen */
+/* Contract address box */
 .contract-wrapper {
   display: flex;
   align-items: center;
@@ -541,8 +571,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   max-width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap;             /* address + button can wrap instead of overflowing */
-  width: fit-content;     /* shrink to fit content */
+  flex-wrap: wrap;          /* address + button can wrap instead of overflowing */
+  width: fit-content;       /* shrink to fit content on desktop */
 }
 
 .contract-wrapper code {
@@ -552,8 +582,8 @@ body {
   user-select: all;
   word-break: break-all;
   overflow-wrap: anywhere;
-  flex: 0 1 auto;              /* don't force full-width stretching */
-  white-space: nowrap;         /* keep it on one line on desktop */
+  flex: 0 1 auto;
+  white-space: nowrap;      /* keep one line on desktop */
 }
 
 .copy-btn {
@@ -580,7 +610,10 @@ body {
   font-weight: 500;
 }
 
-/* Modal styles for full image preview */
+/* =========================================================
+   13. Modal (gallery image preview)
+   ========================================================= */
+
 .modal {
   position: fixed;
   top: 0;
@@ -654,7 +687,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* How-to-buy section */
+/* =========================================================
+   14. How-to-buy section
+   ========================================================= */
+
 .how-to-buy {
   background: #084072;
   color: #e6f2ff;
@@ -710,11 +746,6 @@ body {
   margin-top: 2.5rem;
 }
 
-/* Kill chart-btn’s default left margin when used in flex button rows */
-.buy-actions .chart-btn {
-  margin-left: 0;
-}
-
 /* How-to-buy layout on mobile */
 @media (max-width: 900px) {
   .buy-steps {
@@ -728,7 +759,37 @@ body {
   }
 }
 
-/* Mobile hero heading */
+/* =========================================================
+   15. Responsive tweaks – general
+   ========================================================= */
+
+/* Older 768px block (kept, just clarified) */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    gap: 1rem;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding-top: 6rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  .tokenomics .token-info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile hero heading colour tweak */
 @media (max-width: 640px) {
   .hero-content h1 {
     font-size: 2.3rem;
@@ -743,48 +804,10 @@ body {
   }
 }
 
-/* --- Dexscreener chart buttons (hero + how-to-buy) --- */
-a.chart-btn,
-a.chart-btn:link,
-a.chart-btn:visited,
-a.chart-btn:hover,
-a.chart-btn:active,
-a.chart-btn:focus {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 2.2rem !important;
-  margin-left: 1rem;
-  background: #34c759 !important;
-  color: #ffffff !important;
-  border-radius: 50px !important;
-  border: none !important;
-  text-decoration: none !important;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(52, 199, 89, 0.4);
-  white-space: nowrap;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+/* =========================================================
+   16. Global mobile tuning (phones + small tablets)
+   ========================================================= */
 
-/* No extra left margin in grouped button layouts */
-.hero-actions .chart-btn,
-.buy-actions .chart-btn {
-  margin-left: 0 !important;
-}
-
-a.chart-btn i {
-  margin-right: 0.4rem;
-}
-
-a.chart-btn:hover,
-a.chart-btn:active {
-  background: #2fa94f !important;
-  transform: translateY(-2px);
-}
-
-/* ===== Global mobile tuning ===== */
-/* Phones + small tablets: keep sections full width but pad content inwards */
 @media (max-width: 768px) {
   .section,
   .about,
@@ -801,7 +824,7 @@ a.chart-btn:active {
   /* Hero spacing so nav doesn’t sit on top of content */
   .hero {
     width: 100%;
-    padding: 6.5rem 1.25rem 3rem;
+    padding: 8.5rem 1.25rem 3rem;  /* increased top padding for mobile nav */
     margin: 0 auto;
   }
 
@@ -824,26 +847,28 @@ a.chart-btn:active {
 
 /* Extra tweaks for very narrow phones */
 @media (max-width: 600px) {
-  .hero {
-    padding: 8.5rem 1.25rem 3rem;
-  }
   .contract-wrapper {
     flex-direction: column;
     align-items: stretch;
   }
 
   .contract-wrapper code {
+    /*
+     * When the contract address and copy button stack vertically,
+     * prevent the address block from growing to fill the available
+     * height (which caused an overly tall box). Setting flex to
+     * 0 0 auto keeps the height equal to its contents.
+     */
     flex: 0 0 auto;
     text-align: center;
     margin-bottom: 0.5rem;
-    white-space: normal;   /* override desktop nowrap so it wraps on mobile */
+    white-space: normal;   /* allow wrapping on mobile */
   }
 
   .hero-actions {
     align-items: center;
     justify-content: center;
   }
-
 
   .copy-btn {
     align-self: center;
@@ -875,20 +900,5 @@ a.chart-btn:active {
 
   .buy-actions {
     gap: 0.75rem;
-  }
-
-  .contract-wrapper code {
-    /*
-     * When the contract address and copy button stack vertically,
-     * prevent the address block from growing to fill the available
-     * height (which caused an overly tall box). Setting flex to
-     * 0 0 auto keeps the height equal to its contents. We also
-     * center the text to maintain balance and add a small margin
-     * underneath for breathing room before the button.
-     */
-    flex: 0 0 auto;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    white-space: normal;   /* override desktop nowrap so it wraps on mobile */
   }
 }
