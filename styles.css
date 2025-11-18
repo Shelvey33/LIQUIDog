@@ -65,29 +65,25 @@ body {
     padding: 0.75rem 1rem;
   }
 
-  .nav-bar {
-    display: flex;
-    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
+  .navbar {
+    flex-direction: column;    /* stack logo + links */
     align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
-    gap: 0.35rem;             /* small gap between rows */
-  }
-
-  .logo {  
+    padding: 1rem 0.5rem;
+    gap: 0.6rem;               /* clean spacing between logo and links */
     text-align: center;
-    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
-    margin-bottom: 0.1rem;
   }
 
-  .nav-links {
-    display: flex;
+  .navbar .logo {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;         /* slightly reduced for mobile balance */
+    margin-bottom: 0.2rem;
+  }
+
+  .navbar .nav-links {
     flex-wrap: wrap;
-    gap: 0.9rem;
-    padding: 0;          /* remove any big left/right padding on links */
-    flex-basis: 100%;         /* links go on the second row */
-    justify-content: center;            /* spacing between Home / About / etc */
-    font-size: 0.95rem;       /* a touch smaller for mobile */
+    justify-content: center;   /* center the links */
+    gap: 1rem;                 /* even spacing */
   }
 
   /* Brighten headings for mobile contrast */
@@ -104,31 +100,18 @@ body {
     padding: 0.75rem 1rem;
   }
 
-  .nav-bar {
-    display: flex;
-    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
-    gap: 0.35rem;             /* small gap between rows */
+  .navbar {
+    padding: 0.8rem 0.4rem;
   }
 
-  .logo {  
-    text-align: center;
-    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
-    margin-bottom: 0.1rem;
+  .navbar .logo {
+    font-size: 1.4rem;
   }
 
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-    padding: 0;          /* remove any big left/right padding on links */
-    flex-basis: 100%;         /* links go on the second row */
-    justify-content: center;            /* spacing between Home / About / etc */
-    font-size: 0.95rem;       /* a touch smaller for mobile */
+  .navbar .nav-links {
+    font-size: 0.95rem;
+    gap: 0.8rem;
   }
-
   /* Brighten headings for mobile contrast */
   .hero-content h1,
   .section h2,
