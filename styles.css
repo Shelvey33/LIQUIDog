@@ -59,32 +59,67 @@ body {
   color: #6ddfff;
 }
 
+/* Mobile navbar layout + brighter headings */
+@media (max-width: 900px) {
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  /* Brighten headings for mobile contrast */
+  .hero-content h1,
+  .section h2,
+  .how-to-buy h2 {
+    background: linear-gradient(90deg, #a8f1ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 @media (max-width: 640px) {
-  .navbar {
-    display: flex;
-    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
-    gap: 0.35rem;             /* small gap between rows */
+  header {
+    padding: 0.75rem 1rem;
   }
 
-  .navbar .logo {
-    flex-basis: 100%;         /* logo takes full width on first row */
-    text-align: center;
-    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
-  .navbar .nav-links {
-    flex-basis: 100%;         /* links go on the second row */
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;             /* spacing between Home / About / etc */
-    font-size: 0.95rem;       /* a touch smaller for mobile */
+  .logo {
+    font-size: 1.4rem;
+    margin-bottom: 0.1rem;
   }
 
-  .navbar .nav-links a {
-    padding: 0;               /* remove any big left/right padding on links */
+  .nav-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  /* Brighten headings for mobile contrast */
+  .hero-content h1,
+  .section h2,
+  .how-to-buy h2 {
+    background: linear-gradient(90deg, #a8f1ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -243,16 +278,24 @@ body {
    allow cards to be a bit wider so they don’t look squashed */
 @media (max-width: 900px) {
   .tokenomics .token-info {
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .tokenomics .card {
-    width: 225px;
+    width: 100%;
+    max-width: 320px;   /* nice readable width */
+    margin: 0 auto;
+  }
+  .tokenomics h2 {
+    text-align: center;
+    font-size: 2rem;
   }
 }
 
 /* Small screens (phones, portrait & landscape):
    stack nicely, keep everything centered and readable */
+/* Tokenomics cards on mobile */
 @media (max-width: 600px) {
   .tokenomics .token-info {
     flex-direction: column;
@@ -261,10 +304,10 @@ body {
 
   .tokenomics .card {
     width: 100%;
-    max-width: 30 0px;             /* prevents cards from being crazy wide */
-    padding: 1.6rem;
+    max-width: 320px;   /* nice readable width */
+    margin: 0 auto;
   }
-
+  
   .tokenomics h2 {
     text-align: center;
     font-size: 2rem;
@@ -659,18 +702,18 @@ body {
   margin-top: 2.5rem;
 }
 
-/* Optional: stack steps on mobile */
+/* How-to-buy layout on mobile */
 @media (max-width: 900px) {
+  /* 2 cards per row when there is some width */
   .buy-steps {
     grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 }
 
 @media (max-width: 600px) {
+  /* Single column on very small screens */
   .buy-steps {
-    grid-template-columns: fr;
-    max-width: 480px;      /* keeps the card from touching edges */
-    justify-items: stretch;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -688,15 +731,6 @@ body {
 
     /* Soft glow to stand out from the background */
     text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
-  }
-
-  /* Section titles (Token Contract, Tokenomics, Gallery, How to Buy, etc.) */
-  .section h2,
-  .how-to-buy h2 {
-    background: linear-gradient(90deg, #ffffff, #b6f3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -737,4 +771,47 @@ a.chart-btn:hover,
 a.chart-btn:active {
   background: #2fa94f !important;
   transform: translateY(-2px);
+}
+
+/* ===== Global mobile tuning ===== */
+
+/* Phones + small tablets */
+@media (max-width: 768px) {
+  /* Center all main sections and limit width */
+  .section,
+  .about,
+  .contract,
+  .tokenomics,
+  .roadmap,
+  .how-to-buy,
+  .gallery,
+  .community {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Hero spacing so nav doesn’t feel “on top of” content */
+  .hero {
+    padding: 6.5rem 1.25rem 3rem;
+  }
+
+  .hero-content,
+  .hero-image {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* Extra tweak for very narrow phones */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
 }
