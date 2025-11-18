@@ -547,7 +547,7 @@ body {
   overflow-wrap: anywhere;
   flex: 1 1 220px;            /* take remaining space but allow shrink */
 }
-
+@media (min-width: 901px) {
 /* --- Contract wrapper desktop fix: hug content instead of stretching full width --- */
 .contract-wrapper {
   width: fit-content;
@@ -560,7 +560,7 @@ body {
   flex: 0 1 auto;        /* stop it from stretching to full width */
   white-space: nowrap;   /* keep contract on one line when possible */
 }
-
+}
 .copy-btn {
   padding: 0.5rem 1rem;
   border: none;
