@@ -59,6 +59,35 @@ body {
   color: #6ddfff;
 }
 
+@media (max-width: 640px) {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;          /* allow logo + links to move onto 2 rows */
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem; /* a bit tighter padding on small screens */
+    gap: 0.35rem;             /* small gap between rows */
+  }
+
+  .navbar .logo {
+    flex-basis: 100%;         /* logo takes full width on first row */
+    text-align: center;
+    font-size: 1.4rem;        /* slightly smaller so it doesn’t dominate */
+  }
+
+  .navbar .nav-links {
+    flex-basis: 100%;         /* links go on the second row */
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;             /* spacing between Home / About / etc */
+    font-size: 0.95rem;       /* a touch smaller for mobile */
+  }
+
+  .navbar .nav-links a {
+    padding: 0;               /* remove any big left/right padding on links */
+  }
+}
+
 /* Hero section */
 .hero {
   display: flex;
