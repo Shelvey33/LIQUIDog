@@ -545,7 +545,9 @@ body {
   user-select: all;
   word-break: break-all;       /* long contract can wrap */
   overflow-wrap: anywhere;
-  flex: 1 1 220px;            /* take remaining space but allow shrink */
+  flex: 0 0 auto;            /* take remaining space but allow shrink */
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .copy-btn {
