@@ -185,12 +185,13 @@ body {
   padding: 0.9rem 2.2rem;
   background: #22a6f9;
   color: #ffffff;
-  border-radius: 50px;
+  border-radius: 100px;
   text-decoration: none;
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(34, 166, 249, 0.4);
   transition: background 0.3s ease, transform 0.2s ease;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .btn:hover {
