@@ -545,7 +545,7 @@ body {
   user-select: all;
   word-break: break-all;       /* long contract can wrap */
   overflow-wrap: anywhere;
-  flex: 1 1 220px;             /* take remaining space but allow shrink */
+  flex: 1 1 220px;            /* take remaining space but allow shrink */
 }
 
 .copy-btn {
@@ -725,7 +725,7 @@ body {
   .hero-content h1 {
     font-size: 2.3rem;
     line-height: 1.1;
-    text-align: left;
+    text-align: center;
     background: linear-gradient(90deg, #ffffff, #9ff0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -820,6 +820,24 @@ a.chart-btn:active {
     text-align: center;
   }
 
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .contract-wrapper code {
+    /*
+     * When the contract address and copy button stack vertically,
+     * prevent the address block from growing to fill the available
+     * height (which caused an overly tall box). Setting flex to
+     * 0 0 auto keeps the height equal to its contents. We also
+     * center the text to maintain balance and add a small margin
+     * underneath for breathing room before the button.
+     */
+    flex: 0 0 auto;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
   .copy-btn {
     align-self: center;
   }
@@ -846,5 +864,19 @@ a.chart-btn:active {
 
   .buy-actions {
     gap: 0.75rem;
+  }
+
+  .contract-wrapper code {
+    /*
+     * When the contract address and copy button stack vertically,
+     * prevent the address block from growing to fill the available
+     * height (which caused an overly tall box). Setting flex to
+     * 0 0 auto keeps the height equal to its contents. We also
+     * center the text to maintain balance and add a small margin
+     * underneath for breathing room before the button.
+     */
+    flex: 0 0 auto;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 }
