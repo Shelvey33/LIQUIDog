@@ -558,12 +558,10 @@ body {
 /* 4 steps in columns, responsive down to mobile */
 .buy-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1.5rem auto 0 auto;
 }
 
 .buy-steps .step {
@@ -602,13 +600,15 @@ body {
 /* Optional: stack steps on mobile */
 @media (max-width: 900px) {
   .buy-steps {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 }
 
 @media (max-width: 600px) {
   .buy-steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: fr;
+    max-width: 480px;      /* keeps the card from touching edges */
+    justify-items: stretch;
   }
 }
 
