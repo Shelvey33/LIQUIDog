@@ -61,15 +61,12 @@ body {
 
 /* Mobile navbar layout */
 @media (max-width: 900px) {
-  header {
-    padding: 0.75rem 1rem;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 0.5rem;
-    gap: 0.6rem;
+   .navbar {
+    flex-direction: column;    /* stack logo + links */
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.25rem;   /* match hero/section padding */
+    gap: 0.6rem;               /* clean spacing between logo and links */
     text-align: center;
   }
 
@@ -88,16 +85,12 @@ body {
 }
 
 @media (max-width: 640px) {
-  header {
-    padding: 0.75rem 1rem;
-  }
-
   .navbar {
-    padding: 0.8rem 0.4rem;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 0.5rem;
-    gap: 0.6rem;
+    flex-direction: column;    /* stack logo + links */
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;   /* again, match hero/section padding */
+    gap: 0.6rem;               /* clean spacing between logo and links */
     text-align: center;
   }
 
@@ -542,7 +535,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   max-width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap; /* allow content to wrap instead of overflowing */
+  flex-wrap: wrap;             /* address + button can wrap instead of overflowing */
 }
 
 .contract-wrapper code {
@@ -550,9 +543,9 @@ body {
   color: #ffffff;
   font-size: 0.95rem;
   user-select: all;
-  word-break: break-all;      /* address can wrap */
+  word-break: break-all;       /* long contract can wrap */
   overflow-wrap: anywhere;
-  flex: 1 1 220px;
+  flex: 1 1 220px;             /* take remaining space but allow shrink */
 }
 
 .copy-btn {
