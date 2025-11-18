@@ -728,6 +728,8 @@ body {
     font-size: 2.3rem;
     line-height: 1.1;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(90deg, #ffffff, #9ff0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -826,6 +828,7 @@ a.chart-btn:active {
   }
 
   .hero-actions {
+    align-items: center;
     justify-content: center;
   }
 
@@ -839,9 +842,13 @@ a.chart-btn:active {
   .hero-content h1 {
     font-size: 2.3rem;
     line-height: 1.2;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-actions {
+    align-items: center;
     justify-content: center;
   }
 
