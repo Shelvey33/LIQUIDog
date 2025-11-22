@@ -304,7 +304,7 @@ a.chart-btn:active {
 
 .about-image {
   display: block;
-  margin: 2.0rem auto 0 auto;     /* space above */
+  margin: 2.25rem auto 0 auto;     /* space above */
   width: 512px;
   height: auto;
   max-width: 100%;                 /* prevents overflow on small screens */
@@ -316,7 +316,7 @@ a.chart-btn:active {
     width: 460px;
     height: auto;                 /* exact height you requested */
     max-width: 100%;               /* ensures safe scaling if screen smaller */
-    margin-top: 1.75rem;           /* slightly tighter spacing if you prefer */
+    margin-top: 1.5rem;           /* slightly tighter spacing if you prefer */
   }
 }
 
