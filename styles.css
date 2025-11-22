@@ -131,7 +131,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 6rem; /* space for navbar on desktop */
+  padding-top: 5rem; /* space for navbar on desktop */
   overflow: hidden;
 }
 
