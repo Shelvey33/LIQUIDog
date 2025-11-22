@@ -302,6 +302,13 @@ a.chart-btn:active {
   text-decoration: underline;
 }
 
+.about-image {
+  display: block;
+  margin: 1.25rem auto 0 auto;   /* space above only */
+  max-width: 100%;
+  height: auto;
+}
+
 /* =========================================================
    7. Tokenomics section
    ========================================================= */
