@@ -304,9 +304,20 @@ a.chart-btn:active {
 
 .about-image {
   display: block;
-  margin: 2.0rem auto 0 auto;   /* space above only */
-  max-width: 100%;
+  margin: 2.0rem auto 0 auto;     /* space above */
+  width: 512px;
   height: auto;
+  max-width: 100%;                 /* prevents overflow on small screens */
+}
+
+/* Mobile override — phones in portrait mode */
+@media (max-width: 520px) {
+  .about-image {
+    width: 460px;
+    height: auto;                 /* exact height you requested */
+    max-width: 100%;               /* ensures safe scaling if screen smaller */
+    margin-top: 1.75rem;           /* slightly tighter spacing if you prefer */
+  }
 }
 
 /* =========================================================
