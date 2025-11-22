@@ -304,7 +304,7 @@ a.chart-btn:active {
 
 .about-image {
   display: block;
-  margin: 1.25rem auto 0 auto;   /* space above only */
+  margin: 1.5rem auto 0 auto;   /* space above only */
   max-width: 100%;
   height: auto;
 }
