@@ -719,6 +719,21 @@ a.chart-btn:active {
   -webkit-text-fill-color: transparent;
 }
 
+.bridge-link {
+  color: #cde3f5;
+  font-weight: 600;      /* Slightly bold */
+  text-decoration: underline;
+}
+
+.bridge-link:visited {
+  color: #cde3f5;        /* Keep it white after click */
+}
+
+.bridge-link:hover {
+  color: #cde3f5;
+  text-decoration: underline;
+}
+
 /* 4 steps in columns, responsive */
 .buy-steps {
   display: grid;
