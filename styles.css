@@ -337,23 +337,25 @@ a.chart-btn:active {
   -webkit-text-fill-color: transparent;
 }
 
-/* Cards container – 4 → 2 → 1 grid */
+/* Cards container – 4 → 2 → 1 grid, centered with max width */
 .tokenomics .token-info {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns on large screens */
   gap: 2rem;
   margin-top: 2rem;
-  justify-items: center; /* center cards within their grid cell */
+  max-width: 1200px;            /* keeps the grid from stretching too wide */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;            /* a little side padding on smaller screens */
 }
 
-/* Individual cards – same “look” as before */
+/* Individual cards (wider, fill the column) */
 .tokenomics .card {
-  width: 100%;
-  max-width: 280px; /* same visual size you had */
+  width: 100%;                  /* fill the grid column */
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.2rem 2rem;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -371,21 +373,20 @@ a.chart-btn:active {
   color: #d4e9ff;
 }
 
-/* When 4 side-by-side is too tight – go to 2 columns */
+/* When 4 side-by-side is too tight – go to 2 columns
+   Extra width now becomes OUTER margins thanks to max-width */
 @media (max-width: 1200px) {
   .tokenomics .token-info {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 900px;           /* keeps the 2 columns nice and wide */
   }
 }
 
 /* When even 2 is too tight – go to 1 column */
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .tokenomics .token-info {
     grid-template-columns: 1fr;
-  }
-
-  .tokenomics .card {
-    max-width: 320px; /* matches the old “medium and down” behaviour */
+    max-width: 480px;
   }
 
   .tokenomics h2 {
