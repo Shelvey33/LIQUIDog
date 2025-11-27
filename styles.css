@@ -287,17 +287,17 @@ a.chart-btn:active {
   color: #cde3f5;
 }
 
-.contract-link {
+.basescan-link {
   color: #cde3f5;
   font-weight: 600;      /* Slightly bold */
   text-decoration: underline;
 }
 
-.contract-link:visited {
+.basescan-link:visited {
   color: #cde3f5;        /* Keep it white after click */
 }
 
-.contract-link:hover {
+.basescan-link:hover {
   color: #cde3f5;
   text-decoration: underline;
 }
