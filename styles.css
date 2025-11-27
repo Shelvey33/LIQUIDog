@@ -836,10 +836,6 @@ a.chart-btn:active {
     max-width: 100%;
   }
 
-  .tokenomics .token-info {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
 }
 
 /* Mobile hero heading colour tweak */
